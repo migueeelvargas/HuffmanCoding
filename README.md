@@ -4,6 +4,8 @@ Huffman coding is a loseless data compression algorithm. The idea is that a file
 
 The binary representation each character is 1 byte. Thus, each character has an 8-bit representation. With Huffman's Algorithm, we are able to take to take those characters that appear more often in a file & shorten that bit-level representation into shorter codes. Thus, we are then able to take these shorter code & rewrite the actual file with the new codes & the new file will reflect a new compacted size.
 
+More in-depth detail on Huffman coding can be found [here](https://en.wikipedia.org/wiki/Huffman_coding).
+
 ##Optimality
 Huffman's algorithm is ideal when the entropy of the character distribution is high. This means that if the character distribution is uniform the code length of characters will not be optimal. Thus, a file with a higher character randomness is needed to obtain the most optimal code. 
 

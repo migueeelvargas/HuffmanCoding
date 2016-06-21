@@ -8,11 +8,12 @@ The binary representation each character is 1 byte. Thus, each character has an 
 Huffman's algorithm is ideal when the entropy of the character distribution is high. This means that if the character distribution is uniform the code length of characters will not be optimal. Thus, a file with a higher character randomness is needed to obtain the most optimal code. 
 
 ##Implementation
-This repository contains 2 programs: *compress* & *uncompress*. As the titles state, the *compress* program will handle the task of reading a text file & will produce an encoded output file with the optimal compression based of Huffman's algorithm. The *uncompress* program will, then, handle the task of reading the encoded file & will produce an identical copy of the original file.
+This repository contains 2 programs: `compress` & `uncompress`. As the titles state, the `compress` program will handle the task of reading a text file & will produce an encoded output file with the optimal compression based of Huffman's algorithm. The `uncompress` program will, then, handle the task of reading the encoded file & will produce an identical copy of the original file.
 
 ###Compress program
 The program runs as follows: `./compress infile outfile`
 The flow of the program:
+
 1. Open & read the original file.
 2. Read the file byte-to-byte & keep count of the occurrence of each byte value. Close the file.
 3. Using the byte value counts, create a leaf node for each non-zero count. 

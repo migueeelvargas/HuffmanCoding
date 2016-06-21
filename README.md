@@ -5,4 +5,13 @@ Huffman coding is a loseless data compression algorithm. The idea is that a file
 The binary representation each character is 1 byte. Thus, each character has an 8-bit representation. With Huffman's Algorithm, we are able to take to take those characters that appear more often in a file & shorten that bit-level representation into shorter codes. Thus, we are then able to take these shorter code & rewrite the actual file with the new codes & the new file will demonstrate new compacted size.
 
 ##Optimality
-Huffman's algorithm is ideal when the entropy of the character distribution is high. This means that if the character distribution is uniform the code length of characters will not be optimal. Thus, a file with a higher randomness in the distribution of characters is needed for the most optimal code. 
+Huffman's algorithm is ideal when the entropy of the character distribution is high. This means that if the character distribution is uniform the code length of characters will not be optimal. Thus, a file with a higher character randomness is needed to obtain the most optimal code. 
+
+##Implementation
+This repository contains 2 programs: *compress* & *uncompress*. As the titles state, the *compress* program will handle the task of reading a text file & will produce an encoded output file with the optimal compression based of Huffman's algorithm. The *uncompress* program will, then, handle the task of reading the encoded file & will produce an identical copy of the original file.
+
+###Compress program
+The program runs as follows: `./compress infile outfile`
+
+###Uncompress program
+The program runs as follows: `./uncompress infile outfile`

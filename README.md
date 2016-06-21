@@ -11,7 +11,7 @@ Huffman's algorithm is ideal when the entropy of the character distribution is h
 This repository contains 2 programs: `compress` & `uncompress`. As the titles state, the `compress` program will handle the task of reading a text file & will produce an encoded output file with the optimal compression based of Huffman's algorithm. The `uncompress` program will, then, handle the task of reading the encoded file & will produce an identical copy of the original file.
 
 ###Compress program
-The program runs as follows: `./compress infile outfile`
+The program runs as follows: `./compress infile outfile`.
 The flow of the program:
 
 1. Open & read the original file.
@@ -19,9 +19,15 @@ The flow of the program:
 3. Using the byte value counts, create a leaf node for each non-zero count. 
 4. Now, these nodes are then used to construct an optimal tree using Huffman's algorithm.
 5. Using a bottom to top traversal of the tree, we are able to find the correspoding prefix code of each character & that's applied to each leaf node.
-6. Next, we open the output file & write a header that contains the occurrence count of each character in the ASCII table to it. Given that there is 256 values in ASCII, this header will be the size of 1MB if each count is represented using an int. *This is a naive approach*
+6. Next, we open the output file & write a header that contains the occurrence count of each character in the ASCII table to it. Given that there is 256 values in ASCII, this header will be the size of 1MB if each count is represented using an int. *This IS a naive approach*.
 7. Following, the input file is opened once again & read through it byte-to-byte, each time taking that byte value & writing it's prefix code to the provided output file.
 8. The output file will now have the full encoding & both input & output file streams are closed.
 
 ###Uncompress program
-The program runs as follows: `./uncompress infile outfile`
+The program runs as follows: `./uncompress infile outfile`. The flow of the program:
+
+1. Open the encoded file provided.
+2. To reconstruct the original Huffman tree, the header is read & the value counts are provided. This is enough information to build the orignal tree.
+3. Next, the output file is opened & is read bit-to-bit. 
+4. The reconstructed Huffman tree is used to decode the bits & the corresponding ASCII value is written to the out file.
+5. The produced out file will be an identical copy of the original pre-encoded file.
